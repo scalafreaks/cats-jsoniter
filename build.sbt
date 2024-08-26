@@ -28,7 +28,7 @@ ThisBuild / githubWorkflowAddedJobs += {
       ref = UseRef.Public("codecov", "codecov-action", "v4"),
       params = Map(
         "token"            -> "${{ secrets.CODECOV_TOKEN }}",
-        "file"             -> "./target/scala-3/scoverage-report/scoverage.xml",
+        "file"             -> s"./target/scala-$Scala3/scoverage-report/scoverage.xml",
         "flags"            -> "unittests",
         "codecov_yml_path" -> "./.codecov.yml"
       )
