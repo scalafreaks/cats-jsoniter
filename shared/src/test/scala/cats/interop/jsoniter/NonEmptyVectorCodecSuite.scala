@@ -28,12 +28,12 @@ class NonEmptyVectorCodecSuite extends AnyFunSuite with Matchers {
 
   test("decoding should fail for JSON null") {
     val thrown = the[JsonReaderException] thrownBy readFromString[Nev]("""{"value":null}""")
-    thrown.getMessage should startWith("Cannot create NonEmptyVector without elements")
+    thrown.getMessage should startWith("cannot create NonEmptyVector without elements")
   }
 
   test("decoding should fail for JSON empty array") {
     val thrown = the[JsonReaderException] thrownBy readFromString[Nev]("""{"value":[]}""")
-    thrown.getMessage should startWith("Cannot create NonEmptyVector without elements")
+    thrown.getMessage should startWith("cannot create NonEmptyVector without elements")
   }
 
   test("decoding should succeed for JSON array with elements") {
