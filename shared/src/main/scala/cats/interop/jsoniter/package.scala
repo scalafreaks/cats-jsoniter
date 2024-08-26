@@ -44,7 +44,7 @@ private inline def jsonValueCodec[A, B[_], C[_]](name: String, from: B[A] => Opt
     val decoded = codec.decodeValue(in, if default == nullValue then codec.nullValue else to(default))
     from(decoded) match {
       case Some(value) => value
-      case None        => in.decodeError(s"Cannot create $name without elements")
+      case None        => in.decodeError(s"cannot create $name without elements")
     }
   }
 
