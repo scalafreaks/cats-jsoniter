@@ -37,7 +37,8 @@ ThisBuild / githubWorkflowAddedJobs += {
     "codecov",
     "Codecov Publish",
     jobSetup :+ coverageAggregate :+ codecovPublish,
-    cond = Some("github.event_name != 'push'")
+    cond = Some("github.event_name != 'push'"),
+    scalas = List(Scala3)
   )
 }
 
