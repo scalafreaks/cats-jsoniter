@@ -9,7 +9,9 @@ ThisBuild / developers       := List(tlGitHubDev("aartigao", "Alan Artigao"))
 ThisBuild / tlFatalWarnings := true
 ThisBuild / tlJdkRelease    := Some(11)
 
-ThisBuild / scalaVersion := "3.3.3"
+val Scala3 = "3.3.3"
+ThisBuild / scalaVersion       := Scala3
+ThisBuild / crossScalaVersions := Seq(Scala3)
 
 ThisBuild / githubWorkflowJavaVersions := Seq(JavaSpec.temurin("11"))
 
@@ -26,7 +28,7 @@ ThisBuild / githubWorkflowAddedJobs += {
       ref = UseRef.Public("codecov", "codecov-action", "v4"),
       params = Map(
         "token"            -> "${{ secrets.CODECOV_TOKEN }}",
-        "file"             -> "./target/scala-2.13/scoverage-report/scoverage.xml",
+        "file"             -> "./target/scala-3/scoverage-report/scoverage.xml",
         "flags"            -> "unittests",
         "codecov_yml_path" -> "./.codecov.yml"
       )
