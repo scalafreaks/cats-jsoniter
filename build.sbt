@@ -55,7 +55,7 @@ lazy val versions = new {
 
 }
 
-lazy val root = tlCrossRootProject.aggregate(`cats-jsoniter`.jvm)
+lazy val `cats-jsoniter-root` = tlCrossRootProject.aggregate(`cats-jsoniter`.jvm)
 
 lazy val `cats-jsoniter` = crossProject(JVMPlatform)
   .in(file("."))
