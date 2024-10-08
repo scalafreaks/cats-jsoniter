@@ -49,7 +49,7 @@ lazy val versions = new {
 
   val cats = "2.12.0"
 
-  val jsoniter = "2.30.8"
+  val jsoniter = "2.30.15"
 
   val scalaTest = "3.2.19"
 
